@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imagenes/antartic-experience-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>contacto-antarticexperience</title>
+</head>
+<body id="cuerpo">
+    <header id="encabezado">
+        <img src="../imagenes/antartic-experience-logo.png" class="encabezado__imagen" alt="logo">
+        <nav class="encabezado__menu">
+            <ul>
+                <li><a href="../index.html" >HOME</a></li>
+                <li><a href="../paginas/travesia.html">TRAVESIA</a></li>
+                <li><a href="../paginas/contacto.html">CONTACTO</a></li>
+                <li><a href="../paginas/conciencia-ambiental.html">CONCIENCIA AMBIENTAL</a></li>
+                <li><a href="../paginas/nosotros.html">NOSOTROS</a></li>                
+            </ul>
+        </nav>
+        <p class="encabezado__parrafo">ES</p>
+    </header>
+    <main id="contenedorPrincipal">
+        <h1 class="contacto-titulo">CONTACTO</h1>
+        <h3 class="contacto-subtitulo">¿ESTAS LISTO PARA EL VIAJE?</h3>
+        <section id="contacto-formulario">
+            <h4 class="contacto-formulario__titulo">Déjanos tus datos para que un
+                asesor se comunique a la brevedad</h4>
+            <form action="">
+                <label for="nombre-completo">Nombre y Apellido</label>
+                <input type="text" placeholder="Nombre y apellido" required name="nombre-completo">
+                <label for="email">Email</label>
+                <input type="email" placeholder="Email" required name="email">
+                <select name="pais" id="" required>
+                    <option value="" disabled selected>País...</option>
+                    <option value="">Argentina</option>
+                    <option value="">Chile</option>
+                    <option value="">Colombia</option>
+                    <option value="">Ecuador</option>
+                    <option value="">Paraguay</option>
+                    <option value="">Perú</option>
+                    <option value="">Uruguay</option>
+                    <option value="">Venezuela</option>
+                </select>
+                <label for="celular">Celular</label>
+                <input type="number" placeholder="Celular" name="celular">
+                <label for="consulta">Déjanos cualquier consulta</label>
+                <textarea name="consulta" id="" cols="40" rows="15" placeholder="Déjanos cualquier consulta
+                "></textarea>
+                <input type="submit" value="ENVIAR" id="boton">
+            </form>
+            <section class="datos">
+                <h4 class="datos__titulo">Datos</h4>
+                <p class="dato__parrafo">Antartic Experience</p>
+                <p class="dato__parrafo">Av. Prefectura Naval Argentina, V9410</p>
+                <p class="dato__parrafo">Ushuaia, Argentina.</p>
+                <iframe class="datos__mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12635.631433195033!2d-68.309409011453!3d-54.81270662320652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc4c23122a77470b%3A0xa72c82a6734f37c5!2sAv.%20Prefectura%20Naval%20Argentina%2C%20V9410%20Ushuaia!5e0!3m2!1ses!2sar!4v1674998700105!5m2!1ses!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p class="dato__parrafo">Email : help@antarticexperience.com</p>
+                <p class="dato__parrafo">Teléfono: 4588124</p>
+            </section>
+        </section>
+    </main>
+    <footer id="piePagina">
+        <p class="piePagina__parrafo">ANTARTIC EXPERIENCE © 2022 | <a href="./privacidad-cookies.html" class="piePagina__enlace">POLÍTICA DE PRIVACIDAD Y COOKIES.</a>  TODOS LOS DERECHOS RESERVADOS</p>
+    </footer>
+</body>
+</html>
