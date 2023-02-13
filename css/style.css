@@ -1,29 +1,56 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 #cuerpo{
     font-family: 'Poppins', sans-serif;
+    /*background: rgb(149,213,247);
+    background: linear-gradient(101deg, rgba(149,213,247,1) 0%, rgba(82,130,169,1) 32%, rgba(194,237,253,1) 60%, rgba(47,80,114,1) 80%, rgba(151,202,232,0.6306897759103641) 100%);*/
+    background-color: white;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 100px 1fr 50px;
     grid-template-areas:
     "encabezado"
     "contenedorPrincipal"
     "piePagina"
     ;
 }
-        /* encabezado*/
+
+
+
+
+
+        /*encabezado*/
 
 #encabezado{
+    width: 100%;
     background-color: #545454;
     color: white;
     position: sticky;
     top: 0;
     left: 0;
-    width: 100%;
-    grid-area: encabezado; 
+    grid-area: encabezado;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.encabezado__menu{
+    font-size: 15px;
+}
+.encabezado__menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.encabezado__menu ul li {
+    margin-left: 25px;
+    margin right: 25px;
+
+
 }
 
 .encabezado__menu a{
@@ -39,8 +66,14 @@ header nav ul{
 .encabezado__imagen{
     height: 100px;
     width: 100px;
-    margin: 20px;
     border-radius: 30px;
+    position: relative;
+    right: 90px;
+}
+.encabezado__parrafo{
+    position: relative;
+    left: 90px;
+    font-size: 15px;
 }
 
 
@@ -48,16 +81,16 @@ header nav ul{
 
 
 
+/*contenedor principal*/
 
-
-        /*contenedor principal*/
-
-
+#contenedorPrincipal{
+    grid-area: contenedorPrincipal;
+}
 
 /*tarjeta*/
 .tarjeta--primario{
-    background-color: #545454;
-    color: white;
+    background-color: white;
+    color: black;
     font-size: 18px;
     border-radius: 30px;
     padding: 15px;
@@ -66,6 +99,7 @@ header nav ul{
     margin-top: 20px;
     line-height: 1.5;
     text-align: center;
+    margin: 0 20px;
 }
 .tarjeta--secundario{
     background-color: #545454;
@@ -81,9 +115,7 @@ header nav ul{
 .imagen-tarjeta--primario{
     width: 300px;
     height: 200x;
-    border: 3px solid black;
     border-radius: 30px;
-
 }
 .imagen-tarjeta--secundario{
     width: 200px;
@@ -91,6 +123,9 @@ header nav ul{
     border: 3px solid black;
     border-radius: 20px;
     
+}
+.tarjeta--primario__parrafo{
+
 }
 /*boton*/
 .boton{
@@ -103,38 +138,135 @@ header nav ul{
 .boton:hover{
 color: black;
 background-color: gold;
+cursor: pointer;
 }
-
+/*Contenedor Principal*/
 .baner{
     background-image: url(../imagenes/baner-antartida.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%
+    background-position: bottom center;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 3px solid #7297b1;  
 }
 .baner__titulo{
     font-size: 100px;
+    margin-left: 20px;
+    font-weight: bold;
 }
 .baner__subtitulo{
-    font-size: 40px;
+    font-size: 35px;
+    margin-left: 20px;
+}
+.tarjetas-introductorias{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .tarjetas-introductorias__titulo{
     font-size: 40px;
+    color: black;
 }
-#contenedorPrincipal{
-grid-area: contenedorPrincipal;
+.divisor-tarjetas-primarias{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.travesia-contenedor{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+        
+
+
+
+
+        /*pagina nosotros*/
+.nosotros-contenedor{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nosotros-contenedor__titulo{
+    margin: 20px;
+    font-size: 80px;
+    color: black;
+}
+.nosotros-contenedor__imagen{
+    margin: 20px;
+    width: 700px;
+    height: 400px;
+    background-repeat: no-repeat;
+}
+.nosotros-contenedor__subtitulo{
+    margin: 20px;
+}
+.nosotros-contenedor__parrafo{
+    margin: 20px;
+    text-align: center;
+    line-height: 1.5;
+}
+        /*pagina conciencia ambiental*/
+.contenedor-conciencia-ambiental{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.contenedor-conciencia-ambiental__titulo{
+    margin: 20px;
+}
+.contenedor-conciencia-ambiental div{
+    margin: 20px 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.contenedor-conciencia-ambiental__tarjeta{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+}
+.contenedor-conciencia-ambiental__tarjeta-titulo{
+    align-self: center;
+    position: relative;
+    top: -20px;
+}
+.contenedor-conciencia-ambiental__tarjeta-parrafo{
+    line-height: 1.5;
+    text-align: justify;
+}
+.tajeta-parrafo__lista{
+    list-style: none;
+}
+.contenedor-conciencia-ambiental__imagen{
+    border: 3px solid black;
+    border-radius: 30px;
+    margin-left: 20px;
 }
 
 
 
-
-
-/* pie de pagina */
+        /* pie de pagina */
 #piePagina{
     background-color: #545454;
-    color: white;
-    height: 35px;
-    text-align: center;
+    width: 100%;
+    color: white; 
     grid-area: piePagina;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #piePagina a{
     color: white;
