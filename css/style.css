@@ -2,20 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-#cuerpo{
     font-family: 'Poppins', sans-serif;
-    /*background: rgb(149,213,247);
-    background: linear-gradient(101deg, rgba(149,213,247,1) 0%, rgba(82,130,169,1) 32%, rgba(194,237,253,1) 60%, rgba(47,80,114,1) 80%, rgba(151,202,232,0.6306897759103641) 100%);*/
-    background-color: white;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 50px;
-    grid-template-areas:
-    "encabezado"
-    "contenedorPrincipal"
-    "piePagina"
-    ;
 }
 
 
@@ -26,121 +13,101 @@
 
 #encabezado{
     width: 100%;
+    height: 80px;
     background-color: #545454;
     color: white;
+    border-bottom: 3px solid #03b5c2;
     position: sticky;
     top: 0;
     left: 0;
-    grid-area: encabezado;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "imagen menu menu menu parrafo"
+    ;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    justify-items: center;
     align-items: center;
+
 }
 .encabezado__menu{
     font-size: 15px;
+    grid-area: menu;
 }
 .encabezado__menu ul{
+    margin-bottom: 0px;
+    list-style-type: none;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-.encabezado__menu ul li {
-    margin-left: 25px;
-    margin right: 25px;
-
+    
 
 }
-
+.encabezado__menu ul li{
+    padding: 0px 30px;
+    border-right: 3px solid #03b5c2;
+}
+.encabezado__menu ul li:last-child{
+    border-right: 0px;
+}
 .encabezado__menu a{
     color: white;
     text-decoration: none;
+    transition: all 0.5s ease;
 }
 .encabezado__menu a:hover{
-    color: gold;
-}
-header nav ul{
-    list-style: none;
+    color: #03b5c2;
+    transition: all 0.5s ease;
 }
 .encabezado__imagen{
-    height: 100px;
-    width: 100px;
-    border-radius: 30px;
-    position: relative;
-    right: 90px;
+    height: 70px;
+    width: 70px;
+    grid-area: imagen;
 }
 .encabezado__parrafo{
-    position: relative;
-    left: 90px;
     font-size: 15px;
+    grid-area: parrafo;
+    margin-bottom: 0px;
 }
-
-
-
-
-
-
-/*contenedor principal*/
-
+/*Contenedor Principal*/
 #contenedorPrincipal{
-    grid-area: contenedorPrincipal;
-}
-
-/*tarjeta*/
-.tarjeta--primario{
-    background-color: white;
-    color: black;
-    font-size: 18px;
-    border-radius: 30px;
-    padding: 15px;
-    width: 400px;
-    height: 300px;
-    margin-top: 20px;
-    line-height: 1.5;
-    text-align: center;
-    margin: 0 20px;
-}
-.tarjeta--secundario{
     background-color: #545454;
-    border-radius: 20px;
-    padding: 15px;
-    width: 100%;
-    height: 400px;
-    margin: 30px;
-
-}
-
-/*imagenes tarjetas*/
-.imagen-tarjeta--primario{
-    width: 300px;
-    height: 200x;
-    border-radius: 30px;
-}
-.imagen-tarjeta--secundario{
-    width: 200px;
-    height: 200px;
-    border: 3px solid black;
-    border-radius: 20px;
-    
-}
-.tarjeta--primario__parrafo{
-
 }
 /*boton*/
 .boton{
-    background-color: #054e5d;
-    color: white;
+    background-color: #545454;
+    font-weight: bold;
+    color: #03b5c2;
     padding: 12px 20px;
-    border-radius: 30px;
+    border: 3px solid #03b5c2;
+    border-radius: 15px;
     margin: 20px;
+    transition: all 0.5s ease;
 }
 .boton:hover{
 color: black;
-background-color: gold;
+border: 3px solid black;
+font-weight: bold;
+background-color: #03b5c2;
 cursor: pointer;
+transition: all 0.5s ease;
 }
-/*Contenedor Principal*/
+.columna-index-button{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/*Pagina-index*/
 .baner{
     background-image: url(../imagenes/baner-antartida.jpg);
     background-size: cover;
@@ -152,7 +119,13 @@ cursor: pointer;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    border: 3px solid #7297b1;  
+    border-bottom: 3px solid #03b5c2;
+    border-left: 3px solid #03b5c2;
+    border-right: 3px solid #03b5c2;  
+}
+.columna-baner{
+    padding: 0px;
+
 }
 .baner__titulo{
     font-size: 100px;
@@ -163,35 +136,196 @@ cursor: pointer;
     font-size: 35px;
     margin-left: 20px;
 }
-.tarjetas-introductorias{
+.columna-subtitulo-tarjeta-primaria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subtitulo-tarjeta-primaria{
+    color: white;
+    font-size: 35px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.tarjeta-home1{
+    background-image: url(../imagenes/barco-nieve.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 420px;
+    height: 300px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: all 0.5s ease;
+}
+.tarjeta-home1:hover{
+    transform:scale(1.05, 1.05);
+    transition: all 0.5s ease;
+}
+
+.tarjeta-home2{
+    background-image: url(../imagenes/caminata-antartida.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 420px;
+    height: 300px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: all 0.5s ease;
+}
+.tarjeta-home2:hover{
+    transform:scale(1.05, 1.05);
+    transition: all 0.5s ease;
+}
+
+
+
+.tarjeta-home3{
+    background-image: url(../imagenes/buceo-antartida.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 420px;
+    height: 300px; 
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: all 0.5s ease;
+}
+.tarjeta-home3:hover{
+    transform:scale(1.05, 1.05);
+    transition: all 0.5s ease;
+}
+
+.tarjeta-home__parrafo{
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    position: relative;
+    bottom: -10px;
+}
+
+/*pagina-travesia*/
+
+.titulos-travesia{
+    color: white;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.tarjetas-introductorias__titulo{
-    font-size: 40px;
-    color: black;
+.titulos-travesia__titulo{
+    font-size: 100px;
+    margin-bottom: 10px;
+    
 }
-.divisor-tarjetas-primarias{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: center;
+.titulos-travesia__subtitulo{
+    font-size: 50px;
+    margin-top: 10px;
+
 }
-.travesia-contenedor{
+.travesias-tarjeta-contenedor{
     display: flex;
-    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 }
-        
+.travesias-tarjetas{
+    width: 90%;
+    background-color: #383535;
+    border: 3px solid #03b5c2;
+    border-radius: 30px;
+    margin: 30px 15px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
 
+}
+.travesias-tarjetas__imagen{
+    width: 300px;
+    height: 250px;
+    border-radius: 30px;
+    margin: 15px;
+}
+.travesias-tarjetas__parrafo{
+    line-height: 1.5;
+    color: white;
+    text-align: justify;
+    margin: 15px;
+}
+.columna-travesia-boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*pagina-contacto*/
+.contacto-titulos{
+    color: white;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.contacto-titulos__titulo{
+    font-size: 80px;
+    font-weight: bold;
+    margin: 15px 0px;
+}
+.contacto-titulos__subtitulo{
+    font-size: 30px;
+    margin: 15px 0px;
+}
+
+.contacto-formulario{
+    border: 3px dashed #03b5c2;
+    margin: 20px 0px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.contacto-formulario__titulo{
+    font-size: 30px;
+    color: #03b5c2;
+    text-align: center;
+    margin: 15px 0px;
+}
+.contacto-formulario__formulario{
+    color: white;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.contacto-formulario__formulario-items{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.datos-empresa{
+    color: white;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.datos-empresa__titulo{
+    font-size: 30px;
+    color: #03b5c2;
+}
 
 
 
         /*pagina nosotros*/
 .nosotros-contenedor{
+    color: white;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
@@ -200,30 +334,37 @@ cursor: pointer;
 .nosotros-contenedor__titulo{
     margin: 20px;
     font-size: 80px;
-    color: black;
+    color: white;
+    font-weight: bold;
 }
 .nosotros-contenedor__imagen{
     margin: 20px;
     width: 700px;
     height: 400px;
-    background-repeat: no-repeat;
+    border: 3px solid #03b5c2;
+    border-radius: 30px;
 }
 .nosotros-contenedor__subtitulo{
+    color: #03b5c2;
     margin: 20px;
 }
 .nosotros-contenedor__parrafo{
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
     text-align: center;
     line-height: 1.5;
 }
         /*pagina conciencia ambiental*/
 .contenedor-conciencia-ambiental{
     display: flex;
+    color: white;
     flex-flow: column nowrap;
     justify-content: space-around;
     align-items: center;
 }
 .contenedor-conciencia-ambiental__titulo{
+    font-weight: bold;
+    font-size: 80px;
     margin: 20px;
 }
 .contenedor-conciencia-ambiental div{
@@ -239,21 +380,38 @@ cursor: pointer;
     justify-content: flex-start;
 }
 .contenedor-conciencia-ambiental__tarjeta-titulo{
+    color: #03b5c2;
+    font-size: 30px;
     align-self: center;
     position: relative;
     top: -20px;
 }
 .contenedor-conciencia-ambiental__tarjeta-parrafo{
+    margin-left: 20px;
+    margin-right: 20px;
     line-height: 1.5;
     text-align: justify;
 }
 .tajeta-parrafo__lista{
     list-style: none;
+    position: relative;
+    left: -10px;
+    line-height: 3.0;
+    
 }
 .contenedor-conciencia-ambiental__imagen{
-    border: 3px solid black;
+    width: 300px;
+    height: 350px;
+    border: 3px solid #03b5c2;
     border-radius: 30px;
     margin-left: 20px;
+}
+.tajeta-parrafo__lista li img{
+    background-color: white;
+    border: 1px solid #03b5c2;
+    border-radius: 20px;
+    height: 20px;
+    width: 20px;
 }
 
 
@@ -262,16 +420,50 @@ cursor: pointer;
 #piePagina{
     background-color: #545454;
     width: 100%;
+    border-top: 3px solid #03b5c2;
     color: white; 
-    grid-area: piePagina;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.piePagina__parrafo{
+    margin-bottom: 0px;
+    font-size: 16px;
+}
 #piePagina a{
     color: white;
     text-decoration: none;
+    transition: all 0.5s ease;
 }
 #piePagina a:hover{
-    color: gold;
+    color: #03b5c2;
+    transition: all 0.5s ease;
 }
+
+/*pagina de privacidad-cookies*/
+.contenedor-privacidad-cookies{
+    color: white;
+    margin: 0px 20px;
+}
+.titulo-privacidad{
+    text-justify: center;
+    font-size: 80px;
+    font-weight: bold;
+    margin: 20px 0px;
+    text-align: center;
+}
+.subtitulo-privacidad{
+    justify-content: center;
+    font-size: 30px;
+    color: #03b5c2;
+    margin-top: 20px;
+    text-align: center;
+}
+.parrafo-privacidad__titulo{
+    color: #03b5c2;
+    text-align: center;
+}
+.parrafo-privacidad{
+    line-height: 1.5;
+}
+
