@@ -30,10 +30,9 @@
     grid-row-gap: 10px;
     justify-items: center;
     align-items: center;
-
 }
 .encabezado__menu{
-    font-size: 15px;
+    font-size: 16px;
     grid-area: menu;
 }
 .encabezado__menu ul{
@@ -68,7 +67,7 @@
     grid-area: imagen;
 }
 .encabezado__parrafo{
-    font-size: 15px;
+    font-size: 16px;
     grid-area: parrafo;
     margin-bottom: 0px;
 }
@@ -327,7 +326,7 @@ transition: all 0.5s ease;
 .nosotros-contenedor{
     color: white;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -413,33 +412,6 @@ transition: all 0.5s ease;
     height: 20px;
     width: 20px;
 }
-
-
-
-        /* pie de pagina */
-#piePagina{
-    background-color: #545454;
-    width: 100%;
-    border-top: 3px solid #03b5c2;
-    color: white; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.piePagina__parrafo{
-    margin-bottom: 0px;
-    font-size: 16px;
-}
-#piePagina a{
-    color: white;
-    text-decoration: none;
-    transition: all 0.5s ease;
-}
-#piePagina a:hover{
-    color: #03b5c2;
-    transition: all 0.5s ease;
-}
-
 /*pagina de privacidad-cookies*/
 .contenedor-privacidad-cookies{
     color: white;
@@ -467,3 +439,132 @@ transition: all 0.5s ease;
     line-height: 1.5;
 }
 
+
+
+
+        /* pie de pagina */
+#piePagina{
+    background-color: #545454;
+    width: 100%;
+    border-top: 3px solid #03b5c2;
+    color: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.piePagina__parrafo{
+    margin-bottom: 0px;
+    font-size: 16px;
+}
+#piePagina a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+#piePagina a:hover{
+    color: #03b5c2;
+    transition: all 0.5s ease;
+}
+
+
+
+/*media queries mobile*/
+@media (orientation:portrait) and (max-width:576px){
+    
+    /* media queries pagina contacto*/
+    .contacto-titulos__titulo{
+        font-size: 50px;
+    }
+    .contacto-titulos__subtitulo{
+        font-size: 25px;
+    }
+    .contacto-formulario__titulo{
+        font-size: 25px;
+    }
+    .datos-empresa__titulo{
+        font-size: 25px;
+    }
+/*media queries index*/
+    .baner{
+        background-position: bottom right;
+        width: 100%;
+        height: 300px;
+        justify-content: flex-start;
+    }
+    .baner__titulo{
+        font-size: 50px;
+        color: white;
+        -webkit-text-stroke: 1px black
+    }
+    .baner__subtitulo{
+        font-size: 15px;
+        color: black;
+    }
+    .subtitulo-tarjeta-primaria{
+        font-size: 20px;
+    }
+    .tarjeta-home1{
+        width: 370px;
+        height: 250px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 3px solid #03b5c2;
+    }
+    .tarjeta-home2{
+        width: 370px;
+        height: 250px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 3px solid #03b5c2;
+    }
+    .tarjeta-home3{
+        width: 370px;
+        height: 250px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 3px solid #03b5c2;
+    }
+    /*media queries encabezado*/
+    #encabezado{
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "menu";
+    justify-items: center;
+    align-items: center;
+    }
+    .encabezado__parrafo{
+        display: none;     
+    }
+    .encabezado__imagen{
+        display: none;
+    }
+    .encabezado__menu{
+        font-size: 8px;
+    }
+    .encabezado__menu ul{
+        padding: none;
+    }
+    .encabezado__menu ul li{
+        padding: 0px 5px;
+    }
+
+
+
+
+    /*media queries pie de pagina*/
+    .piePagina__parrafo{
+        font-size: 10px;
+        text-align: center;
+    }
+
+
+
+
+    
+
+
+
+
+
+}
